@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+    <script>
+    //比如传入1993-6-3，返回true ，传入2001-6-3 返回false
+    function isEighteen(str){
+    	var d=new Date()
+    	var y=d.getFullYear();
+    	var cy=str.slice(0,4)
+    	if(y-cy>18){
+    		return true
+    	}else{
+    		return false;
+    	}
+    }
+    var a=isEighteen("2001-6-3")
+    console.log(a);
+
+
+    //8.实现函数 makeClosures，调用之后满足如下条件：
+//1、返回一个函数数组 result，长度与 arr 相同
+//2、运行 result 中第 i 个函数，即 result(i)，结果与 fn(arr[i]) 相同 
+    function makeClosures(arr, fn) {
+  		
+	}
+
+
+//99.给定字符串 str，检查其是否符合如下格式
+//1、XXX-XXX-XXXX
+//2、其中 X 为 Number 类型 
+function checkStr(str){
+  var reg=/(\d{3})-(\d{3})-(\d{4})/
+  if(reg.test(str)){
+  	return true;
+  }else{
+  	return false;
+  }
+}
+	var a=checkStr("123-123-1234")
+	console.log(a);
+    
+    //10.封装函数获取一个字符串中的数字字符，并按数组形式输出，如dgfhfgh254bhku289fgdhdy675gfh输出[254,289,675]
+ 
+function selectNumber(str){
+	var r=/\d+/g,res,arr=[];
+  while( res=r.exec(str) ){
+  	arr.push(res[0])
+  }
+  return arr
+}
+var a=selectNumber("dgfhfgh254bhku289fgdhdy675gfh");
+console.log(a);
+    </script>
+</html>

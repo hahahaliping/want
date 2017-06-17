@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+    <script>
+    //移除数组 arr 中的所有值与 item 相等的元素
+  //   	function remove(arr,item){
+  //   		var ary=[]
+  // 			arr.forEach(function(v){
+  // 				if(v!==item){
+  // 					ary.push(v)
+  // 				}
+  // 			})
+
+  // 			return ary;
+		// }
+		// var a=remove([1,2,3,4,1,2,1],1)	
+		// console.log(a)
+    
+
+//2.找出数组 arr 中重复出现过的元素
+	// function duplicates(arr) {
+	// 	var o={};
+	// 	arr.forEach(function(v){
+	// 			if(o[v]){
+	// 				o[v]+=1
+	// 			}else{
+	// 				o[v]=1
+	// 			}
+	// 	})
+	// 	for(k in o){
+	// 		if(o[k]>1){
+	// 			console.log(k)
+	// 		}
+	// 	}
+	// }
+
+	// 	duplicates([1,2,3,2,2,3,2,4])
+
+
+//3.输出今天的日期，以YYYY-MM-DD的方式，比如今天是2017年3月1日，则输出2017-03-01
+	// function formatToday(){
+ //  		var timer=new Date();
+ //  		var y=timer.getFullYear();
+ //  		var m=timer.getMonth()+1;
+ //  		m=m>10?m:"0"+m;
+ //  		var d=timer.getDate();
+ //  		d=d>10?d:"0"+d;
+ //  		var today=y+"-"+m+"-"+d;
+ //  		return today
+	// }   	
+	// var a=formatToday()
+	// console.log(a)
+
+//4.为了保证页面输出安全，我们经常需要对一些特殊的字符进行转义，请写一个函数escapeHtml，将<, >, &, “进行转义
+ 
+// function escapeHtml(str) {
+// return str.replace(/[<>”&]/g, function(match) {
+//     switch (match) {
+//       case “<”:
+//          return “&lt;”;
+//       case “>”:
+//           return “&gt;”;
+//       case “&”:
+//           return “&amp;”;
+//       case “\””:
+//          return “&quot;”;
+//      }
+//   });
+// }
+// escapeHtml("shh&<>“dkjfjdhfdj")
+
+//5.用js实现随机选取10–100之间的10个数字，存入一个数组，并排序(升序)
+	// function random_sort(){
+  		
+ //  		var i=0,arr=[];
+ //  		while(i<10){
+  			// var num=Math.floor((Math.random()*91+10);
+ //  			i++;
+ //  			arr.push(num);
+ //  		}
+ //  		return arr.sort(function(a,b){return a-b});	
+	// }
+
+	// var a=random_sort();
+	// console.log(a)
+
+
+//6
+    //define 
+(function(window){
+    function fn(str){
+        this.str=str;
+    }
+ 
+    fn.prototype.format = function(){
+        var arg =arguments;
+        return this.str.replace(/\{(\d+)\}/g,function(a,b){
+             return arg[b]||"";
+      });
+    }
+    window.fn = fn;
+})(window);
+ 
+//use
+(function(){
+    var t = new fn('<p><a href="{0}">{1}</a><span>{2}</span></p>');
+    console.log(t.format('http://www.alibaba.com','Alibaba','Welcome'));
+})();
+
+    </script>
+</html>
